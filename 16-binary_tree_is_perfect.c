@@ -8,7 +8,7 @@
  */
 size_t max(size_t n1, size_t n2)
 {
-	return(n1 > n2 ? n1 : n2);
+	return (n1 > n2 ? n1 : n2);
 }
 
 /**
@@ -20,19 +20,21 @@ size_t binary_tree_height(const binary_tree_t *tree)
 {
 	if (tree == NULL)
 		return (0);
-	return (1 + max(binary_tree_height(tree->left), binary_tree_height(tree->right)));
+	return (1 + max(binary_tree_height(tree->left),
+				binary_tree_height(tree->right)));
 }
 
 /**
- *  * binary_tree_size - function that measures the size of a binary tree
- *   * @tree: pointer to the root node of the tree to measure the size
- *    * Return: size of the tree, or 0 if tree is NULL
- *     */
+ * binary_tree_size - function that measures the size of a binary tree
+ * @tree: pointer to the root node of the tree to measure the size
+ * Return: size of the tree, or 0 if tree is NULL
+ */
 size_t binary_tree_size(const binary_tree_t *tree)
 {
-		if (tree == NULL)
-					return (0);
-			return (binary_tree_size(tree->left) + 1 + binary_tree_size(tree->right));
+	if (tree == NULL)
+		return (0);
+	return (binary_tree_size(tree->left) + 1 +
+			binary_tree_size(tree->right));
 }
 
 /**
@@ -44,5 +46,6 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	if (tree == NULL)
 		return (0);
-	return ((2^(binary_tree_height(tree) + 1)) == (binary_tree_size(tree)));
+	return ((2 ^ (binary_tree_height(tree) + 1)) ==
+			(binary_tree_size(tree)));
 }
